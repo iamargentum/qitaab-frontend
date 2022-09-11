@@ -15,12 +15,13 @@
 }
 
 .propertiesDrawerWrapper {
+    top: 0;
     right: 0;
-    top: 10px;
     width: 400px;
     height: 100%;
     position: fixed;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     border-radius: 10px;
     background-color: #ffffff;
     transition: margin 500ms ease-in-out;
