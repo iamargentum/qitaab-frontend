@@ -66,7 +66,10 @@ var edges = [
     { from: 28, to: 0 },
 ];
 
+var drawerOpen = false
+var currentNodeId = undefined
 var container = document.getElementById("componentNetwork")
+var propertiesDrawer = document.getElementById("propertiesDrawerWrapper")
 var data = {
     nodes,
     edges
@@ -87,3 +90,36 @@ var options = {
 }
 
 network = new vis.Network(container, data, options)
+
+network.on("click", (properties) => {
+    console.log("properties are ", properties)
+    if(properties.nodes.length > 0 && !drawerOpen) {
+        showPropertiesDrawer()
+    } else {
+        hidePropertiesDrawer()
+    }
+})
+
+hidePropertiesDrawer()
+
+function hidePropertiesDrawer() {
+    let propertiesDrawerClassList = propertiesDrawer.classList
+    if(propertiesDrawerClassList.contains("drawerVisible")) {
+        propertiesDrawer.classList.remove("drawerVisible")
+    }
+    if(!propertiesDrawerClassList.contains("drawerHidden")) {
+        propertiesDrawer.classList.add("drawerHidden")
+    }
+    drawerOpen = false
+}
+
+function showPropertiesDrawer() {
+    let propertiesDrawerClassList = propertiesDrawer.classList
+    if(propertiesDrawerClassList.contains("drawerHidden")) {
+        propertiesDrawer.classList.remove("drawerHidden")
+    }
+    if(!propertiesDrawerClassList.contains("drawerVisible")) {
+        propertiesDrawer.classList.add("drawerVisible")
+    }
+    drawerOpen = true
+}

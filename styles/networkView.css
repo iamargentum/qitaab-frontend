@@ -13,3 +13,23 @@
     width: 100%;
     height: 100%;
 }
+
+.propertiesDrawerWrapper {
+    right: 0;
+    top: 10px;
+    width: 400px;
+    height: 100%;
+    position: fixed;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: margin 500ms ease-in-out;
+}
+
+.drawerHidden {
+    margin-right: -400px;
+}
+
+.drawerVisible {
+    margin-right: 15px;
+}
