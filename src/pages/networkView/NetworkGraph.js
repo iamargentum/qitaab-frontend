@@ -31,7 +31,7 @@ export function NetworkGraph({nodeClicked}) {
             network.on("click", nodeClicked)
         }
 
-    }, [visNetworkRef])
+    }, [visNetworkRef, nodeClicked])
 
     return (
         <div
