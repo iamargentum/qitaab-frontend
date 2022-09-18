@@ -19,13 +19,8 @@ export function NetworkView() {
         }
     }
 
-    let sideBarShowHideTest = () => {
-        setSideBarOpen(prev => !prev)
-    }
-
     return (
         <div className="w-full h-screen bg-black p-3 overflow-hidden relative">
-            <button className="bg-white z-998" onClick={sideBarShowHideTest}>show/hide sidebar</button>
             <NetworkGraph nodeClicked={nodeClicked} />
             <SideBar open={sideBarOpen} nodeData={nodeData} />
         </div>
