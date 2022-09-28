@@ -6,6 +6,10 @@ export function NetworkGraph({nodeClicked}) {
 
     let visNetworkRef = useRef()
 
+    let showDetails = (data) => {
+        nodeClicked(data)
+    }
+
     useEffect(() => {
         let data = {
             nodes: dummyNodes,
@@ -28,10 +32,10 @@ export function NetworkGraph({nodeClicked}) {
         }
         if(visNetworkRef.current) {
             let network = new Network(visNetworkRef.current, data, visNetworkOptions)
-            network.on("click", nodeClicked)
+            network.on("click", showDetails)
         }
 
-    }, [visNetworkRef, nodeClicked])
+    }, [visNetworkRef])
 
     return (
         <div
