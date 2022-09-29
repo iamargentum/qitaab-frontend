@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { CreateApi } from "./CreateApi"
-import { CreateComponent } from "./CreateComponent"
 import { CreateFile } from "./CreateFile"
+import { CreateComponent } from "./CreateComponent"
 
 const typeOfNodeOptions = [
     {

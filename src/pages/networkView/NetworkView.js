@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { NetworkGraph } from "./NetworkGraph";
 import { SideBar } from "./SideBar";
+import { NetworkGraph } from "./NetworkGraph";
 
 export function NetworkView() {
 
